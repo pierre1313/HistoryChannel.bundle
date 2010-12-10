@@ -76,9 +76,9 @@ def getBackground(path):
     logo = HTML.ElementFromString(page).xpath('//div[@class="logo"]//img')[0].get('src')
     Log(logo)
     if logo == None:
-      return DataObject(HTTP.Request('http://localhost/index.php?image='+bkgnd+'&crop=5'),'image/jpeg')
+      return DataObject(HTTP.Request('http://history.img.plugins.plexapp.tv?image='+bkgnd),'image/jpeg')
     else:
-      return DataObject(HTTP.Request('http://localhost/index.php?image='+bkgnd+'&crop=5&logo='+logo),'image/jpeg')
+      return DataObject(HTTP.Request('http://history.img.plugins.plexapp.tv?image='+bkgnd+'&logo='+logo),'image/jpeg')
   except:
     return Redirect(R(ART))
     
