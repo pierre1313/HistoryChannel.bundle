@@ -91,7 +91,7 @@ def getShow(sender,path):
     return dir
 
 def getVideos(sender,path):
-    dir = MediaContainer(art = R(ART), viewGroup = "InfoList")
+    dir = MediaContainer(art = sender.art, viewGroup = "InfoList")
     page = HTTP.Request(BASE_URL+path).content
     mrssdata = page[page.find('mrss: \"')+7:]
     mrssdata =  String.Unquote(b64decode(mrssdata[:mrssdata.find('\"')])).replace('media:','media-')
